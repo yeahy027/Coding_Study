@@ -3,26 +3,24 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String input = br.readLine();
+        String str = br.readLine();
 
-        int result = 0;
-        int stack = 0;
+        int count = 0;
+        int open = 0;
 
-        for (int i = 0; i < input.length(); i++) {
-            char now = input.charAt(i);
-
-            if (now == '(') {
-                stack++;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == '(') {
+                open++;
             } else {
-                stack--;
-                if (input.charAt(i - 1) == '(') {
-                    result += stack;
+                open--;
+                if (str.charAt(i - 1) == '(') {
+                    count += open;
                 } else {
-                    result += 1;
+                    count++;
                 }
             }
         }
 
-        System.out.println(result);
+        System.out.println(count);
     }
 }
