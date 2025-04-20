@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Main {
-    public String solution(String s) {
+    public static String solution(String s) {
         Deque<Character> stack = new ArrayDeque<>();
         
         for (char c : s.toCharArray()) {
@@ -21,11 +21,9 @@ public class Main {
         int n = sc.nextInt();
         sc.nextLine();
 
-        Main m = new Main();
-
         for (int i = 0; i < n; i++) {
             String input = sc.nextLine();
-            System.out.println(m.solution(input));
+            System.out.println(solution(input));
         }
     }
 }
