@@ -4,20 +4,21 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
 
+        StringTokenizer st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());
         int K = Integer.parseInt(st.nextToken());
 
-        List<Integer> list = new ArrayList<>();
+        // List<Integer> list = new ArrayList<>();
+        int[] arr = new int[N];
 
         st = new StringTokenizer(br.readLine());
         for(int i = 0; i < N; i++) {
-            list.add(Integer.parseInt(st.nextToken()));
+            arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        Collections.sort(list);
+        Arrays.sort(arr);
 
-        System.out.println(list.get(K - 1));
+        System.out.println(arr[K - 1]);
     }
 }
